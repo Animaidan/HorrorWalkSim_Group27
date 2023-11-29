@@ -9,29 +9,41 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        RotateToCamera();
+
         //Side to side movement
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += -transform.right * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            transform.position += transform.right * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * speed * Time.deltaTime;
+            transform.position += transform.forward * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.back * speed * Time.deltaTime;
+            transform.position += -transform.forward * speed * Time.deltaTime;
         }
     }
 
+    public void RotateToCamera()
+    {
+        GameObject camera = Camera.main.gameObject;
 
+        Vector3 newRotation = camera.transform.rotation.eulerAngles;
+
+        newRotation.x = transform.rotation.x;
+        newRotation.z = transform.rotation.z;
+        transform.rotation = Quaternion.Euler(newRotation);
+    }
 
 
 }
