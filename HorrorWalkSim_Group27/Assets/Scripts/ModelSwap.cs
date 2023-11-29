@@ -5,7 +5,7 @@ using UnityEngine;
 public class ModelSwap : MonoBehaviour
 {
     public Mesh cleaned;
-
+    public Material[] newMaterials;
     public bool isCleaned = false;
 
     // UI vars
@@ -20,6 +20,11 @@ public class ModelSwap : MonoBehaviour
             {
                 filter.mesh = cleaned;
                 isCleaned = true;
+
+                if(newMaterials != null && newMaterials.Length > 0)
+                {
+                    GetComponent<MeshRenderer>().materials = newMaterials;
+                }
             }
         }
 
