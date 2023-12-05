@@ -13,20 +13,7 @@ public class ModelSwap : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            MeshFilter filter = GetComponent<MeshFilter>();
-            if(filter != null)
-            {
-                filter.mesh = cleaned;
-                isCleaned = true;
-
-                if(newMaterials != null && newMaterials.Length > 0)
-                {
-                    GetComponent<MeshRenderer>().materials = newMaterials;
-                }
-            }
-        }
+        
 
         // after this line would go in UI
         //This will create an array of every object using this script
@@ -41,5 +28,20 @@ public class ModelSwap : MonoBehaviour
             }
         }
         totalCleanedObjects = cleanedObjects;
+    }
+
+    public void SwapModel()
+    {
+        MeshFilter filter = GetComponent<MeshFilter>();
+            if(filter != null)
+            {
+                filter.mesh = cleaned;
+                isCleaned = true;
+
+                if(newMaterials != null && newMaterials.Length > 0)
+                {
+                    GetComponent<MeshRenderer>().materials = newMaterials;
+                }
+            }
     }
 }
