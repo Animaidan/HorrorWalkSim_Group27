@@ -16,11 +16,11 @@ public class MouseLookAround : MonoBehaviour
         rotationY += Input.GetAxis("Mouse X") * sensitivity;
         transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
 
-        Debug.DrawLine(transform.position, transform.position + transform.forward * 3f);
+        Debug.DrawLine(transform.position, transform.position + transform.forward * 1f);
 
         RaycastHit hit;
         //raycast parameters (origin, direction, distance)
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 3f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
         {
             if (hit.collider.GetComponent<ModelSwap>())
             {
