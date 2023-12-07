@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DetectModelSwap : MonoBehaviour
 {
+    public static int ObjectsCleaned;
+
+    //static makes the variable available anywhere
+    //static means there is only ONE of the variable in the entire game, instead of object orientated
+
     // Update is called once per frame
     void Update()
     {
@@ -21,8 +26,10 @@ public class DetectModelSwap : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.GetComponent<ModelSwap>().SwapModel();
+                    ObjectsCleaned++;
                 }
             }
         }
     }
+
 }
