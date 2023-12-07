@@ -7,11 +7,11 @@ public class DetectModelSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawLine(transform.position, transform.position + transform.forward * 1f);
+        Debug.DrawLine(transform.position, transform.position + transform.forward * 1.5f);
 
         RaycastHit hit;
         //raycast parameters (origin, direction, distance)
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1.5f))
         {
             if (hit.collider.GetComponent<ModelSwap>())
             {
