@@ -28,6 +28,6 @@ public class Jumpscare : MonoBehaviour
     IEnumerator DisableImg()
     {
         yield return new WaitForSeconds(2);
-        JumpScareImg.SetActive(false)
+        JumpScareImg.SetActive(false);
     }
 }
