@@ -19,9 +19,14 @@ public class Jumpscare : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            JumpScareImg.SetActive(true);
-            audioSource.Play();
-            StartCoroutine(DisableImg());
+            if(!isPlayed)
+            {
+                JumpScareImg.SetActive(true);
+                audioSource.Play();
+                StartCoroutine(DisableImg());
+
+                isPlayed = true;
+            }
         }
     }
 
