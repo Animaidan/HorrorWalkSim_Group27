@@ -1440,8 +1440,9 @@ GameObject:
   m_Component:
   - component: {fileID: 587670556}
   - component: {fileID: 587670555}
+  - component: {fileID: 587670557}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: EndGameTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,6 +1484,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &587670557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587670554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6712b1ef85438bf4fb506e70930b6648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &615607139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7244,10 +7257,10 @@ SceneRoots:
   - {fileID: 844383069}
   - {fileID: 1090564085}
   - {fileID: 878454018}
-  - {fileID: 587670556}
   - {fileID: 2035757691}
   - {fileID: 1073318879}
   - {fileID: 344728740}
+  - {fileID: 587670556}
   - {fileID: 1078640693}
   - {fileID: 1527419485}
   - {fileID: 1405988617}

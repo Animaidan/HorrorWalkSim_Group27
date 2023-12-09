@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-   
+    void Start()
+    {
+        UnlockedMouse();
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -14,5 +18,11 @@ public class EndScreen : MonoBehaviour
     public void SwitchScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    void UnlockedMouse()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
